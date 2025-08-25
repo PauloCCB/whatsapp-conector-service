@@ -112,15 +112,15 @@ export const initWASocket = async (): Promise<void> => {
       for (let index = 0; index < messages.length; index++) {
         const message = messages[index];
         
-        // Solo mostrar mensajes que TÚ enviaste (no los que recibes)
-        if (message.key.fromMe) {
-          logger.info(`📤 MENSAJE SALIENTE:`);
-          logger.info(`   👤 Para: ${message.key.remoteJid}`);
-          logger.info(`   💬 Contenido: ${message.message?.conversation || message.message?.extendedTextMessage?.text || 'Sin contenido'}`);
-          logger.info(`   📅 Timestamp: ${message.messageTimestamp ? new Date(Number(message.messageTimestamp) * 1000).toLocaleString() : 'Sin timestamp'}`);
-          logger.info(`   📋 ID: ${message.key.id}`);
-          //logger.info(`   ──────────────────────────────────────`);
-        }
+                 // Solo mostrar mensajes que TÚ enviaste (no los que recibes)
+         if (message.key.fromMe) {
+           logger.info(`[MENSAJE SALIENTE]`);
+           logger.info(`   Para: ${message.key.remoteJid}`);
+           logger.info(`   Contenido: ${message.message?.conversation || message.message?.extendedTextMessage?.text || 'Sin contenido'}`);
+           logger.info(`   Timestamp: ${message.messageTimestamp ? new Date(Number(message.messageTimestamp) * 1000).toLocaleString() : 'Sin timestamp'}`);
+           logger.info(`   ID: ${message.key.id}`);
+           //logger.info(`   ──────────────────────────────────────`);
+         }
       }
     }
   });
