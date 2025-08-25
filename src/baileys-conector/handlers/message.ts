@@ -9,10 +9,7 @@ const MessageHandler = async (bot: WASocket, message: FormattedMessage) => {
     logger.info(`   Contenido: ${message.content || 'Sin contenido'}`);
     logger.info(`   Timestamp: ${message.messageTimestamp ? new Date(Number(message.messageTimestamp) * 1000).toLocaleString() : 'Sin timestamp'}`);
     logger.info(`   ID: ${message.key.id}`);
-    //logger.info(`   ──────────────────────────────────────`);
 
-    // 🚫 No enviar respuestas automáticas - solo mostrar en consola
-    //logger.info(`✅ Mensaje procesado - No se envió respuesta automática`);
 }
 
 export default MessageHandler;
