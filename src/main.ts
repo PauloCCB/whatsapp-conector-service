@@ -101,7 +101,7 @@ export const initWASocket = async (): Promise<void> => {
     },
   );
 
-  //! Mensajes entrantes y salientes
+  //* Mensajes entrantes y salientes
   sock.ev.on(
     'messages.upsert',
     ({ messages, type }: { messages: WAMessage[]; type: string }) => {

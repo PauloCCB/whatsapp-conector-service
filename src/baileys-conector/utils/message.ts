@@ -135,8 +135,8 @@ export const getMessageWithFallback = (message: WAMessage): FormattedMessage | n
     // Intentar extraer información básica
     return {
       key: message.key,
-      messageTimestamp: message.messageTimestamp,
-      pushName: message.pushName,
+      messageTimestamp: null,
+      pushName: null,
       content: "Mensaje recibido (desencriptación fallida)",
       mediaCiphertextSha256: null,
       isDecrypted: false,
